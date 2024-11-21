@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kebun Binatang</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Data Kebun Binatang</h1>
+    <a href="/tambah">Tambah Hewan</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Spesies</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% animals.forEach(animal => { %>
+                <tr>
+                    <td><%= animal.id %></td>
+                    <td><%= animal.name %></td>
+                    <td><%= animal.species %></td>
+                    <td>
+                        <a href="/hapus/<%= animal.id %>" style="background-color: #dc3545;">Hapus</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
